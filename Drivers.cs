@@ -27,17 +27,25 @@ namespace ICTPR430_ConsoleApp
 		//method to update driver's point:
 		public int UpdatePoint(int demeritPoint)
 		{
+			Console.WriteLine("\nUpdating driver licence point.....");
+			Console.WriteLine("Current point: "+ this.point);
+			Console.WriteLine("Demerit point: " + demeritPoint);
+			Console.WriteLine("then...");
 			if (demeritPoint >= maxDemerit)
 			{
-				Console.WriteLine("You loose your licence!");
+				Console.WriteLine("You loose your licence!\n");
 				this.point = 0;
 			}
 			else if (demeritPoint >= 9)
 			{
-				Console.WriteLine("License suspension is imminent!");
+				Console.WriteLine("License suspension is imminent!\n");
 				this.point = this.point - demeritPoint;
 			}
-			else this.point = this.point - demeritPoint;
+			else
+			{
+				this.point = this.point - demeritPoint;
+				Console.WriteLine("New point: " + this.point+"\n");
+			}
 			return this.point;
 		}
 		//method to display driver's address and state licensing:

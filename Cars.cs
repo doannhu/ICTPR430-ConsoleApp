@@ -18,10 +18,15 @@ namespace ICTPR430_ConsoleApp
 			this.numberOfDoors = numberOfDoors;
 		}
 		//method to change car's colour:
-		public string ChangeColor(string newColour) { this.colour = newColour; return this.colour; }
+		public string ChangeColor(string newColour) {
+			Console.WriteLine("\nChanging car's colour.....");
+			Console.WriteLine("Old colour: " + this.colour);
+			this.colour = newColour;
+			Console.WriteLine("New paint color: "+this.colour+"\n");
+			return this.colour; }
 
 		//method to display car details:
-		public void DisplayCarDetails() { Console.WriteLine("\nCar details\n"); Console.WriteLine("Body type is " + this.bodyType + ". colour is " + this.colour + ". upholstery is " + this.upholstery + ". number of doors is " + this.numberOfDoors); }
+		public void DisplayCarDetails() { Console.WriteLine("\nCar details: \n"); Console.WriteLine("Body type is " + this.bodyType + ". colour is " + this.colour + ". upholstery is " + this.upholstery + ". number of doors is " + this.numberOfDoors); }
 		//method to display generic and specific car details with driver details:
 		public override void DisplayAll() { Console.WriteLine("\nCar - Show all: \n"); DisplayCarDetails(); base.DisplayAll();  }
 	}

@@ -22,21 +22,25 @@ namespace ICTPR430_ConsoleApp
 		//method to add kilometer drive
 		public int UpdateKilometer(int addKilometer)
 		{
+			Console.WriteLine("\nUpdating kilometer driven.....");
+			Console.WriteLine("Current odometer reading: " +this.kilometerDriven);
+			Console.WriteLine("Kilometer's being added: " + addKilometer);
 			if (addKilometer <= 0)
 			{
-				Console.WriteLine("Error: Invalid number! ");
+				Console.WriteLine("Error: Invalid kilometer number. Please enter a positive number!\n ");
 			}
 			else
 			{
 				this.kilometerDriven += addKilometer;
+				Console.WriteLine("New odometer reading: "+ this.kilometerDriven+"\n");
 			}
 			return this.kilometerDriven;
 		}
 		//method to display vehicle details:
 		public void DisplayVehicleDetails()
 		{
-			Console.WriteLine("\nVehicle details: \n");   
-			Console.WriteLine("Rego is " + this.registrationNumber + ". make is " + this.make + ". model is " + this.model + ". km's are " + this.kilometerDriven + ".");
+			Console.WriteLine("\nVehicle details: ");   
+			Console.WriteLine("Rego is " + this.registrationNumber + ". make is " + this.make + ". model is " + this.model + ". km's are " + this.kilometerDriven + ".\n");
 		}
 		//method to display vehicle and driver details:
 		public virtual void DisplayAll()
