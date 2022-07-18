@@ -6,17 +6,17 @@ namespace ICTPR430_ConsoleApp
 {
     class Vehicles
     {
-		private string _registrationNumber;
-		private string _make;
-		private string _model;
-		private int _kilometerDriven;
+		private string registrationNumber;
+		private string make;
+		private string model;
+		private int kilometerDriven;
 		Drivers driver;
-		public Vehicles(string _registrationNumber, string _make, string _model, int _kilometerDriven, Drivers driver)
+		public Vehicles(string registrationNumber, string make, string model, int kilometerDriven, Drivers driver)
 		{
-			this._registrationNumber = _registrationNumber;
-			this._make = _make;
-			this._model = _model;
-			this._kilometerDriven = _kilometerDriven;
+			this.registrationNumber = registrationNumber;
+			this.make = make;
+			this.model = model;
+			this.kilometerDriven = kilometerDriven;
 			this.driver = driver;
 		}
 		public int UpdateKilometer(int addKilometer)
@@ -27,14 +27,14 @@ namespace ICTPR430_ConsoleApp
 			}
 			else
 			{
-				this._kilometerDriven += addKilometer;
+				this.kilometerDriven += addKilometer;
 			}
-			return this._kilometerDriven;
+			return this.kilometerDriven;
 		}
 		public void DisplayVehicleDetails()
 		{
 			Console.WriteLine("\nVehicle details: \n");   
-			Console.WriteLine("Rego is " + this._registrationNumber + ". make is " + this._make + ". model is " + this._model + ". km's are " + this._kilometerDriven + ".");
+			Console.WriteLine("Rego is " + this.registrationNumber + ". make is " + this.make + ". model is " + this.model + ". km's are " + this.kilometerDriven + ".");
 		}
 		public virtual void DisplayAll()
 		{

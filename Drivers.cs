@@ -29,10 +29,12 @@ namespace ICTPR430_ConsoleApp
 			if (demeritPoint >= maxDemerit)
 			{
 				Console.WriteLine("You loose your licence!");
+				this.point = 0;
 			}
 			else if (demeritPoint >= 9)
 			{
 				Console.WriteLine("License suspension is imminent!");
+				this.point = this.point - demeritPoint;
 			}
 			else this.point = this.point - demeritPoint;
 			return this.point;

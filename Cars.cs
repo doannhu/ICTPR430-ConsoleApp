@@ -6,19 +6,19 @@ namespace ICTPR430_ConsoleApp
 {
 	class Cars : Vehicles
 	{
-		private string _bodyType;
-		private string _colour;
-		private string _upholstery;
-		private int _numberOfDoors;
-		public Cars(string _registrationNumber, string _make, string _model, int _kilometerDriven, Drivers driver, string _bodyType, string _colour, string _upholstery, int _numberOfDoors) : base(_registrationNumber, _make, _model, _kilometerDriven, driver)
+		private string bodyType;
+		private string colour;
+		private string upholstery;
+		private int numberOfDoors;
+		public Cars(string registrationNumber, string make, string model, int kilometerDriven, Drivers driver, string bodyType, string colour, string upholstery, int numberOfDoors) : base(registrationNumber, make, model, kilometerDriven, driver)
 		{
-			this._bodyType = _bodyType;
-			this._colour = _colour;
-			this._upholstery = _upholstery;
-			this._numberOfDoors = _numberOfDoors;
+			this.bodyType = bodyType;
+			this.colour = colour;
+			this.upholstery = upholstery;
+			this.numberOfDoors = numberOfDoors;
 		}
-		public string ChangeColor(string newColour) { this._colour = newColour; return this._colour; }
-		public void DisplayCarDetails() { Console.WriteLine("\nCar details\n"); Console.WriteLine("Body type is " + this._bodyType + ". colour is " + this._colour + ". upholstery is " + this._upholstery + ". number of doors is " + this._numberOfDoors); }
+		public string ChangeColor(string newColour) { this.colour = newColour; return this.colour; }
+		public void DisplayCarDetails() { Console.WriteLine("\nCar details\n"); Console.WriteLine("Body type is " + this.bodyType + ". colour is " + this.colour + ". upholstery is " + this.upholstery + ". number of doors is " + this.numberOfDoors); }
 		public override void DisplayAll() { Console.WriteLine("\nCar - Show all: \n"); DisplayCarDetails(); base.DisplayAll();  }
 	}
 }
