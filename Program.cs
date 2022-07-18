@@ -27,7 +27,7 @@ namespace ICTPR430_ConsoleApp
             string contents = File.ReadAllText("C:\\temp\\csc.txt");
             Console.WriteLine(contents);
             Console.WriteLine("---------------------------------------------------");
-            //Before update
+            //Before update, display all
             Console.WriteLine("\nBefore change: \n");
             test.TestCar(car1,car2);
             test.TestTruck(truck1, truck2);
@@ -41,7 +41,7 @@ namespace ICTPR430_ConsoleApp
             car2.ChangeColor("red");
             driver1.UpdatePoint(3);//expect 9
             driver2.UpdatePoint(2);//expect 10
-            // After change:            
+            // After change, display all            
             Console.WriteLine("\nAfter change: \n");
             test.TestCar(car1, car2);
             test.TestTruck(truck1, truck2);
