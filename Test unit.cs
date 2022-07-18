@@ -6,6 +6,7 @@ namespace ICTPR430_ConsoleApp
 {
     class Test_unit
     {
+        //method to test outputs of car methods
         public void TestCar(Cars car1, Cars car2)
         {
             car1.DisplayVehicleDetails();
@@ -17,6 +18,7 @@ namespace ICTPR430_ConsoleApp
             car2.DisplayAll();
             Console.WriteLine("**********************");
         }
+        //method to test outputs of truck methods
         public void TestTruck(Trucks truck1, Trucks truck2)
         {
             truck1.DisplayVehicleDetails();
