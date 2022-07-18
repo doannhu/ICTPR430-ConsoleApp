@@ -19,6 +19,7 @@ namespace ICTPR430_ConsoleApp
 			this.kilometerDriven = kilometerDriven;
 			this.driver = driver;
 		}
+		//method to add kilometer drive
 		public int UpdateKilometer(int addKilometer)
 		{
 			if (addKilometer <= 0)
@@ -31,11 +32,13 @@ namespace ICTPR430_ConsoleApp
 			}
 			return this.kilometerDriven;
 		}
+		//method to display vehicle details:
 		public void DisplayVehicleDetails()
 		{
 			Console.WriteLine("\nVehicle details: \n");   
 			Console.WriteLine("Rego is " + this.registrationNumber + ". make is " + this.make + ". model is " + this.model + ". km's are " + this.kilometerDriven + ".");
 		}
+		//method to display vehicle and driver details:
 		public virtual void DisplayAll()
 		{
 			this.DisplayVehicleDetails();

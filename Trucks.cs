@@ -15,7 +15,9 @@ namespace ICTPR430_ConsoleApp
 			this.loadCap = loadCap;
 			this.wheels = wheels;
 		}
+		//method to display truck details:
 		public void DisplayTruckDetails() { Console.WriteLine("The max load capacity is " + this.loadCap + ". axles are " + this.axles + ". number of wheels is " + this.wheels); }
+		//method to display generic and specific truck details with driver details:
 		public override void DisplayAll() {Console.WriteLine("Truck - Show all: \n"); DisplayTruckDetails(); base.DisplayAll();  }
 	}
 }

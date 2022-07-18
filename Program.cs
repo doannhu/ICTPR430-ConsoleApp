@@ -28,7 +28,7 @@ namespace ICTPR430_ConsoleApp
             Console.WriteLine(contents);
             Console.WriteLine("---------------------------------------------------");
             //Before update
-            Console.WriteLine("Before change: \n");
+            Console.WriteLine("\nBefore change: \n");
             test.TestCar(car1,car2);
             test.TestTruck(truck1, truck2);
             Console.WriteLine("---------------------------------------------------");
@@ -42,7 +42,7 @@ namespace ICTPR430_ConsoleApp
             driver1.UpdatePoint(3);//expect 9
             driver2.UpdatePoint(2);//expect 10
             // After change:            
-            Console.WriteLine("After change\n");
+            Console.WriteLine("\nAfter change: \n");
             test.TestCar(car1, car2);
             test.TestTruck(truck1, truck2);
             Console.WriteLine("---------------------------------------------------");

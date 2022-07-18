@@ -24,6 +24,7 @@ namespace ICTPR430_ConsoleApp
 			this.address = address;
 			this.point = point;
 		}
+		//method to update driver's point:
 		public int UpdatePoint(int demeritPoint)
 		{
 			if (demeritPoint >= maxDemerit)
@@ -39,6 +40,7 @@ namespace ICTPR430_ConsoleApp
 			else this.point = this.point - demeritPoint;
 			return this.point;
 		}
+		//method to display driver's address and state licensing:
 		public void DisplayAddressAndStates()
 		{
 			Console.WriteLine("\nAddress is\n");
