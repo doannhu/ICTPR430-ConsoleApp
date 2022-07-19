@@ -24,15 +24,14 @@ namespace ICTPR430_ConsoleApp
 		{
 			Console.WriteLine("\nUpdating kilometer driven.....");
 			Console.WriteLine("Current odometer reading: " +this.kilometerDriven);
-			Console.WriteLine("Kilometer's being added: " + addKilometer);
-			if (addKilometer <= 0)
+			Console.WriteLine("Kilometer's being added: " + addKilometer);			
+			this.kilometerDriven += addKilometer;
+			if (this.kilometerDriven <= 0) { 
+				Console.WriteLine("Invalid kilometer adjustment. Please re-enter");
+				this.kilometerDriven -= addKilometer;
+			} else
 			{
-				Console.WriteLine("Error: Invalid kilometer number. Please enter a positive number!\n ");
-			}
-			else
-			{
-				this.kilometerDriven += addKilometer;
-				Console.WriteLine("New odometer reading: "+ this.kilometerDriven+"\n");
+				Console.WriteLine("New odometer reading: " + this.kilometerDriven + "\n");
 			}
 			return this.kilometerDriven;
 		}
@@ -46,8 +45,7 @@ namespace ICTPR430_ConsoleApp
 		public virtual void DisplayAll()
 		{
 			this.DisplayVehicleDetails();
-			Console.WriteLine("\nDriver details: " +" driver licence number: "+ this.driver.licenceNo + " " + ". driver name:  " + this.driver.firstName + " " + this.driver.lastName + ". phone:  " + this.driver.phoneNo + ". point: " + this.driver.point);
-			this.driver.DisplayAddressAndStates();
+			this.driver.DisplayDriver();
 			
 		}
 	}

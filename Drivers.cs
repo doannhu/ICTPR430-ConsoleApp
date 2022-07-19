@@ -12,9 +12,10 @@ namespace ICTPR430_ConsoleApp
 		public string lastName;
 		public string phoneNo;
 		public string[] address;
-		public int point;
+		public int demeritPoint;
 		static int maxDemerit = 12;
-		public Drivers(string licenceNo, string[] stateLicensing, string firstName, string lastName, string phoneNo, string[] address, int point)
+		static int minDemerit = 0;
+		public Drivers(string licenceNo, string[] stateLicensing, string firstName, string lastName, string phoneNo, string[] address, int demeritPoint)
 		{
 			this.licenceNo = licenceNo;
 			this.stateLicensing = stateLicensing;
@@ -22,35 +23,40 @@ namespace ICTPR430_ConsoleApp
 			this.lastName = lastName;
 			this.phoneNo = phoneNo;
 			this.address = address;
-			this.point = point;
+			this.demeritPoint = demeritPoint;
 		}
 		//method to update driver's point:
-		public int UpdatePoint(int demeritPoint)
+		public int UpdatePoint(int addDemeritPoint)
 		{
-			Console.WriteLine("\nUpdating driver licence point.....");
-			Console.WriteLine("Current point: "+ this.point);
-			Console.WriteLine("Demerit point: " + demeritPoint);
+			Console.WriteLine("\nUpdating driver licence demerit point.....");
+			Console.WriteLine("Current demerit point: "+ this.demeritPoint);
+			Console.WriteLine("Add: " + addDemeritPoint);
 			Console.WriteLine("then...");
-			if (demeritPoint >= maxDemerit)
-			{
-				Console.WriteLine("You loose your licence!\n");
-				this.point = 0;
-			}
-			else if (demeritPoint >= 9)
-			{
-				Console.WriteLine("License suspension is imminent!\n");
-				this.point = this.point - demeritPoint;
-			}
+			this.demeritPoint += addDemeritPoint;
+			if (this.demeritPoint > maxDemerit)
+            {
+				this.demeritPoint = maxDemerit;
+				Console.WriteLine("New demerit point: 12. Warning: licence suspension!\n");
+            } else if (this.demeritPoint >=9)
+            {
+				Console.WriteLine("New demerit point: " + this.demeritPoint);
+				Console.WriteLine("Warning: License suspension is imminent! \n");
+            }
+			else if (this.demeritPoint < minDemerit)
+            {
+				Console.WriteLine("Invalid added demerit point. Please re-enter!\n");
+				this.demeritPoint -= addDemeritPoint;
+            }
 			else
-			{
-				this.point = this.point - demeritPoint;
-				Console.WriteLine("New point: " + this.point+"\n");
+            {
+				Console.WriteLine("New demerit point: " + this.demeritPoint+ "\n");
 			}
-			return this.point;
+			return this.demeritPoint;
 		}
 		//method to display driver's address and state licensing:
-		public void DisplayAddressAndStates()
+		public void DisplayDriver()
 		{
+			Console.WriteLine("\nDriver details: " + " driver licence number: " + this.licenceNo + " " + ". driver name:  " + this.firstName + " " + this.lastName + ". phone:  " + this.phoneNo + ". demerit point: " + this.demeritPoint);
 			Console.WriteLine("\nAddress is\n");
 			for (int i = 0; i < this.address.Length; i += 2)
 			{

@@ -26,7 +26,10 @@ namespace ICTPR430_ConsoleApp
 			return this.colour; }
 
 		//method to display car details:
-		public void DisplayCarDetails() { Console.WriteLine("\nCar details: \n"); Console.WriteLine("Body type is " + this.bodyType + ". colour is " + this.colour + ". upholstery is " + this.upholstery + ". number of doors is " + this.numberOfDoors); }
+		public void DisplayCarDetails() { 
+			Console.WriteLine("\nCar details: \n"); 
+			Console.WriteLine("Body type is " + this.bodyType + ". colour is " + this.colour + ". upholstery is " + this.upholstery + ". number of doors is " + this.numberOfDoors); 
+		}
 		//method to display generic and specific car details with driver details:
 		public override void DisplayAll() { Console.WriteLine("\nCar - Show all: \n"); DisplayCarDetails(); base.DisplayAll();  }
 	}
